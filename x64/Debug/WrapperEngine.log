@@ -1,0 +1,6 @@
+﻿  Engine.hpp
+C:\Users\z.kate\source\repos\WrapperEngine\Arguments.hpp(14,1): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+  main.cpp
+C:\Users\z.kate\source\repos\WrapperEngine\Arguments.hpp(14,1): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+  Создание кода...
+  WrapperEngine.vcxproj -> C:\Users\z.kate\source\repos\WrapperEngine\x64\Debug\WrapperEngine.exe
