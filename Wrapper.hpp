@@ -11,14 +11,14 @@ public:
 	Wrapper() = delete;
 
 	template<typename Subject, typename ... Args>
-	Wrapper(Subject* sub, int(Subject::* method)(Args...), const vectorArgs& _args){
+	Wrapper(Subject* sub, int(Subject::* method)(Args...), vectorArgs const& _args){
 		args = std::make_shared<Arguments>(_args);
 		subMethod = [this, sub, method](std::vector<int> const& funcArgs) {
 			return callMethod(sub, method, funcArgs, std::make_index_sequence<sizeof...(Args)>{});
 		};		
 	}
 
-	int run(vectorArgs vec) {
+	int run(vectorArgs const& vec) {
 		try {
 			args->setNewArgs(vec);
 		}

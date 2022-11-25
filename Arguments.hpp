@@ -14,7 +14,7 @@ public:
 		argsSize = vec.size();
 	}
 
-	int setNewArgs(vectorArgs vec) {
+	int setNewArgs(vectorArgs const& vec) {
 		if (!checkUserArgs(vec)) {
 			throw std::exception("wrong aruments");
 		}
@@ -58,7 +58,7 @@ private:
 		}
 	}
 
-	bool checkUserArgs(vectorArgs userArgs) {
+	bool checkUserArgs(vectorArgs const& userArgs) {
 		if (userArgs.size() > argsSize) {
 			return false;
 		}

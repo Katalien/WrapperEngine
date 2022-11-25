@@ -6,7 +6,7 @@ using vectorArgs = std::vector<std::pair<std::string, int>>;
 
 class Engine {
 public:
-	void registerCommand(Wrapper& wrapper, std::string command) {
+	void registerCommand(Wrapper const& wrapper, std::string const& command) {
 		if (command == "") {
 			throw std::exception("invalid command name");
 		}
@@ -16,7 +16,7 @@ public:
 		wrappersMap.insert({ command,  wrapper });
 	}
 
-	int execute(const std::string command, const vectorArgs& args) {
+	int execute(std::string const& command, vectorArgs const& args) {
 		if (!wrappersMap.contains(command)) {
 			throw std::exception("no such command");
 		}
