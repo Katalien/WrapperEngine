@@ -18,7 +18,20 @@ public:
 		};		
 	}
 
+	int run(vectorArgs vec) {
+		try {
+			args->setNewArgs(vec);
+		}
+		catch (std::exception& e) {
+			std::cout << e.what() << std::endl;
+			return -1;
+		};
+		return subMethod(args->getVals());
+	}
 
+	int run() {
+		return subMethod(args->getDefaultVals());
+	}
 
 private:
 	std::shared_ptr<Arguments> args = nullptr;
